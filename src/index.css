@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon{
+  color:black;
+  cursor: pointer;
+  margin-left: 3%;
+}
