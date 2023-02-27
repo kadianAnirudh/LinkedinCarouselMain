@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import AIVet from './AIVet'
 import './App.css'
-import Form from './Form'
-import HeroPanel from './HeroPanel'
-import Team from './Team'
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import Home from './Home';
+import Sam from './Creators/Sam/Sam'
 
 function App() {
 
   return (
     <div className="App">
- <HeroPanel/>
- <AIVet/>
- <Team/>
- {/* <Form/> */}
+ <Routes>
+  <Route path="/" element={<Home/>}/>
+  <Route path="/sam" element={<Sam/>}/>
+ </Routes>
     </div>
   )
 }
