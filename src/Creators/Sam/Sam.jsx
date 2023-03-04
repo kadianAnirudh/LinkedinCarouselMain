@@ -512,6 +512,7 @@ const Sam = () => {
             Preview your beautiful carousel{" "}
           </h2>
           <div className="flex justify-center align-center mt-8">
+            {/* Preview Carousel */}
             <div className="flex justify-center h-carouselHeight w-carouselWidth border-2 border-black">
               {" "}
               bro{" "}
