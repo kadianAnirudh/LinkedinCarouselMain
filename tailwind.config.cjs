@@ -9,9 +9,16 @@ module.exports = {
       height: {
         carouselHeight: "500px",
       },
+      fontFace: {
+        custom: {
+          fontFamily: "samFontBody",
+          src: "url('./src/fonts/vocal.otf') format('opentype')",
+        },
+      },
+      rotate: {
+        17: "-8deg",
+      },
     },
+    plugins: [],
   },
-  plugins: [
-    
-  ],
 };
