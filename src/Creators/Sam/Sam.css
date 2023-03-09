@@ -1,18 +1,7 @@
 @font-face {
   font-family: "CustomFont";
   src: url("../../fonts/vocal.otf") format("opentype");
-
-  /* font-family: "Poppins";
-  src:url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');  */
 }
-
-.bingo{
-    font-family: "CustomFont";
-    text-decoration: underline;
-    text-decoration-color: red;
-}
-
-.madAngle{
-  width: 150px;
-  font-family: "Poppins";
+.bingo {
+  font-family: "CustomFont";
 }
