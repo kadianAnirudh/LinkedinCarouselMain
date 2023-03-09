@@ -622,31 +622,7 @@ const Sam = () => {
               </div>
 
               {/* Carousel Pages Preview */}
-              {pages.map((page) => (
-                <div className="flex h-carouselHeight w-carouselWidth border-2 border-black mr-2">
-                  {/* section 1, with text and heading */}
-                  <div className="flex-col justify-center align-center">
-                    <div className="">
-                      <div className="max-w-max mt-8 mx-8 border rounded-md">
-                        <h1 className="px-2 py-2 bono text-white bg-[#FF1694] font-medium border rounded-md text-lg">
-                          {page.title}
-                        </h1>
-                      </div>
-                      <div className="min-h-[150px]">
-                        <h2 className="mt-4 mx-8 max-h-max max-w-max text-lg">
-                          {page.bodyText}
-                        </h2>
-                      </div>
-                    </div>
-                    {/* section 2 with image container and image  */}
-                    <div className="h-[200px] bg-[#FF1694] mt-4 ml-4 mr-4 flex justify-center items-center">
-                      <div className="h-[180px] w-[340px]">
-                        <img src={page.imageSource} className="h-full w-full" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+
               {/* Last Page Preview */}
             </div>
             ;

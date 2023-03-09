@@ -228,3 +228,10 @@ const downloadPDF = (div) => {
 
 // tailwind for underline
 //  underline decoration-[#FF1694] decoration-[12px]
+
+{
+  /* <Button className="" onClick={() => downloadPDF(divRef.current)}>
+  {" "}
+  Download for Free{" "}
+</Button>; */
+}
