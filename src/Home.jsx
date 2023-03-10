@@ -1,14 +1,16 @@
-import React from 'react'
-import HeroPanel from './HeroPanel'
-import Team from './Team'
+import React from "react";
+import HeroPanel from "./HeroPanel";
+import Footer from "./Creators/Sam/Footer.jsx";
+import Team from "./Team";
 
 const Home = () => {
   return (
     <>
-<HeroPanel/>
- <Team/>
+      <HeroPanel />
+      <Footer />
+      <Team />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
