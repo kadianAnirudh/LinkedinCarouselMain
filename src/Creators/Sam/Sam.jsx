@@ -8,7 +8,12 @@ import Shakespeare from "../../images/shakespeareWiki.png";
 import Tesla from "../../images/teslaImage.png";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-// import PDFDocument from "pdfkit";
+import Follow from "../../images/Follow.png";
+import Feedback from "../../images/Feedback.png";
+import Share from "../../images/Share.png";
+import Office from "../../images/office.png";
+import Footer from "./Footer.jsx";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Sam = () => {
   // state for cover Image
@@ -16,43 +21,43 @@ const Sam = () => {
   // state for Last page Image
   const [lastImage, setLastImage] = useState(SamPicture);
   // state for hook
-  const [hook, sethook] = useState("Using ChatGPT to Talk to Any Expert Ever");
+  const [hook, sethook] = useState(
+    "This tool helps, wanna know what else can?"
+  );
   //state for Page 1 Title
-  const [OneTitle, SetOneTitle] = useState("1. William Shakespeare");
+  const [OneTitle, SetOneTitle] = useState("1. Following us!");
   //state for Page 1 Body
   const [OneBody, SetOneBody] = useState(
-    "William Shakespeare (bapt. 26 April 1564-23 April 1616) was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist"
+    "You can follow Sam for the some crazy tool lists, AI, especially chat GPT hacks and follow me to watch me building & learning in public. Secret info: I reply to all my DMs"
   );
   // state for hook
   const [lastHeading, setLastHeading] = useState("Enjoy this carousel?");
   //state for Page 1 Body
   const [lastBody, SetLastBody] = useState(
-    "Join my free AI Discord community; link in the comments. And if you want to learn to make carousels like these, check out LinkedX (info on my profile)."
+    "You can join Sam's free AI discord community and even check out LinkedX from his profile where he shares the success mantra to his massive linedkedin growth. Cheers. "
   );
   //state for Page 1 Title
-  const [OneImage, setOneImage] = useState(Shakespeare);
+  const [OneImage, setOneImage] = useState(Follow);
   //Page number
-  const [pageNumber, setPageNumber] = useState(0);
   // array of pages between page 1 and last page
   const [pages, Setpages] = useState([
     {
-      title: "1. Nikola Tesla",
+      title: "2. Feedback",
       bodyText:
-        "Attempting to develop inventions he could patent and market, Tesla conducted a range of experiments with mechanical oscillators/generators, electrical discharge tubes, and early X-ray imaging",
-      imageSource: Tesla,
+        "This is the MVP / first version and needs your help in the form of feedback. Rush to my Linkedin DM or mail me and tell me what you liked, didn't like, would like ",
+      imageSource: Feedback,
     },
     {
-      title: "2. Thomas Edison",
+      title: "3. Spread the word",
       bodyText:
-        "Attempting to develop inventions he could patent and market, Tesla conducted a range of experiments with mechanical oscillators/generators, electrical discharge tubes, and early X-ray imaging",
-      imageSource: Tesla,
+        "What threads are to Twitter, Carousels are to Linkedin. Share your ideas with the world along with this tool. I did not put any watermarks, if you didn't like it, you should not be sharing it. ",
+      imageSource: Share,
     },
   ]);
   // margin left for preview
-  const [widthNumber, setwidthNumber] = useState(`300`);
-  const randomNumber = 400;
+  const [widthNumber, setwidthNumber] = useState(`600`);
+  const randomNumber = 600;
   const divRef = useRef(null);
-  // const ref = useRef(null);
 
   // Function for downloading PDF
   const downloadPDF = async (div) => {
@@ -146,25 +151,12 @@ const Sam = () => {
     Setpages([
       ...pages,
       {
-        title: "Title",
-        bodyText: "Body text",
-        imageSource: Tesla,
+        title: "Choose a smart Title",
+        bodyText: "The body text should be small but interesting and valuable",
+        imageSource: Office,
       },
     ]);
   }
-  // handling left click
-  const handleLeftClick = () => {
-    if (pageNumber > 0) {
-      setPageNumber(pageNumber - 1);
-    }
-  };
-  // handling Right click
-  const handleRightClick = () => {
-    if (pageNumber < 1) {
-      setPageNumber(pageNumber + 1);
-      console.log(pageNumber);
-    }
-  };
 
   return (
     <>
@@ -182,7 +174,7 @@ const Sam = () => {
                   {" "}
                   Sam Szuchan{" "}
                 </p>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="mt-6 text-lg font-semibold leading-8 text-gray-600">
                   My Personal LinkedIn bookmarks are filled with Sam's beautiful
                   carousels. His lists are well researched and gain some amazing
                   engagement. Use his designs to share resources and grow your
@@ -251,16 +243,16 @@ const Sam = () => {
               {/* The carousel page */}
               <div className="flex-col justify-center h-carouselHeight w-carouselWidth border-2 border-black overflow-hidden">
                 {/* The heading / Hook storage box  */}
-                <div className="w-full h-2/4 mt-8 overflow-hidden text-center ">
+                <div className="w-[97%] h-2/4 mt-8 overflow-hidden text-center flex justify-center ml-[5px]">
                   {/* The Hook  */}
                   <h1
-                    style={{
-                      textDecoration: "underline",
-                      textDecorationColor: "#FF1694",
-                      textDecorationThickness: "12px",
-                      textUnderlineOffset: "0.2em",
-                      //   fontFamily: "IBM Plex Sans , sans-serif",
-                    }}
+                    // style={{
+                    //   textDecoration: "underline",
+                    //   textDecorationColor: "#FF1694",
+                    //   textDecorationThickness: "12px",
+                    //   textUnderlineOffset: "0.2em",
+                    //   //   fontFamily: "IBM Plex Sans , sans-serif",
+                    // }}
                     className="bingo text-5xl w-full leading-relaxed"
                   >
                     {hook}
@@ -305,7 +297,7 @@ const Sam = () => {
                 <div className="mt-8">
                   <h2 className="text-base leading-7 text-black">
                     {" "}
-                    Pro Tip💡: Use a rectangular image{" "}
+                    Pro Tip💡: Use a rectangular image ( Length = 2 * Width ){" "}
                   </h2>
                   <form class="flex items-center mt-8">
                     <div class="shrink-0"></div>
@@ -352,7 +344,7 @@ const Sam = () => {
                 </div>
                 {/* section 2 with image container and image  */}
                 <div className="h-[200px] bg-[#FF1694] mt-4 ml-4 mr-4 flex justify-center items-center">
-                  <div className="h-[180px] w-[340px]">
+                  <div className="h-[200px] w-[400px] border-[#FF1694] border-4">
                     <img src={OneImage} className="h-full w-full" />
                   </div>
                 </div>
@@ -392,7 +384,7 @@ const Sam = () => {
                   <div className="mt-8">
                     <h2 className="text-base leading-7 text-black">
                       {" "}
-                      Pro Tip💡: Use a rectangular image{" "}
+                      Pro Tip💡: Use a rectangular image ( Length = 2 * Width )
                     </h2>
                     <form class="flex items-center mt-8">
                       <div class="shrink-0"></div>
@@ -495,7 +487,7 @@ const Sam = () => {
                 <div className="mt-12">
                   <h2 className="text-base leading-7 text-black">
                     {" "}
-                    Choose Curtain Image{" "}
+                    Choose Curtain Image ( Squared, background removed ){" "}
                   </h2>
                   <form class="flex items-center mt-8">
                     <div class="shrink-0"></div>
@@ -546,7 +538,7 @@ const Sam = () => {
       </div>
 
       {/* Preview section */}
-      <div className="bg-white py-8 flex-center justify-center mt-12 overflow-x-auto">
+      <div className="bg-white py-8 flex-center justify-center mt-12">
         <div className="justify-center flex-center">
           <p className="text-3xl font-bold tracking-tight text-pink-600 sm:text-4xl text-center">
             Amazing Work!
@@ -555,11 +547,7 @@ const Sam = () => {
             {" "}
             Preview your beautiful carousel{" "}
           </h2>
-          <div
-            style={{ overflow: "hidden" }}
-            className="flex items-center justify-center mt-8 overflow-x-auto"
-          >
-            {/* Everything below this  */}
+          <div className="flex items-center justify-center mt-8 overflow-x-auto">
             <div
               id="myDiv"
               ref={divRef}
@@ -573,7 +561,7 @@ const Sam = () => {
                   {/* The heading / Hook storage box  */}
                   <div className="w-full h-2/4 mt-8 overflow-hidden text-center baka">
                     {/* The Hook  */}
-                    <h1 className="bingo text-5xl w-full leading-relaxed underline decoration-[#FF1694] decoration-[12px]">
+                    <h1 className="bingo text-5xl w-full leading-relaxed">
                       {hook}
                     </h1>
                   </div>
@@ -591,9 +579,7 @@ const Sam = () => {
                   </div>
                 </div>
               </div>
-
               {/* Page 1 Preview  */}
-
               <div
                 style={{ overflow: "hidden" }}
                 className="flex h-carouselHeight w-carouselWidth border-2 border-black mr-2 "
@@ -622,19 +608,69 @@ const Sam = () => {
               </div>
 
               {/* Carousel Pages Preview */}
+              {pages.map((page) => (
+                <div className="flex-col h-carouselHeight w-carouselWidth border-2 border-black mr-2">
+                  {/* section 1, with text and heading */}
+                  <div className="flex-col justify-center align-center">
+                    <div className="">
+                      <div className="max-w-max mt-8 mx-8 border rounded-md">
+                        <h1 className="px-2 py-2 bono text-white bg-[#FF1694] font-medium border rounded-md text-lg">
+                          {page.title}
+                        </h1>
+                      </div>
+                      <div className="min-h-[150px]">
+                        <h2 className="mt-4 mx-8 max-h-max max-w-max text-lg">
+                          {page.bodyText}
+                        </h2>
+                      </div>
+                    </div>
+                    {/* section 2 with image container and image  */}
+                    <div className="h-[200px] bg-[#FF1694] mt-4 ml-4 mr-4 flex justify-center items-center">
+                      <div className="h-[180px] w-[340px]">
+                        <img src={page.imageSource} className="h-full w-full" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
 
               {/* Last Page Preview */}
+              <div className="flex h-carouselHeight w-carouselWidth border-2 border-black mr-2 overflow-hidden">
+                <div className="flex-col justify-center h-carouselHeight w-carouselWidth overflow-hidden">
+                  <div className="w-full mt-12">
+                    <h2 className="text-3xl font-semibold text-[#FF1694] mx-8">
+                      {lastHeading}
+                    </h2>
+                  </div>
+                  <div className="w-full mt-4">
+                    <p className="text-2xl mx-8 min-h-[180px] font-medium text-black">
+                      {lastBody}
+                    </p>
+                    <div class="relative overflow-hidden">
+                      {/* // pink banner div */}
+                      <div class="h-40 w-[600px] bg-[#FF1694] mt-28"></div>
+                      {/* image contaning div */}
+                      <div class="absolute inset-0 flex justify-center items-center">
+                        <div class="h-48 w-48 mb-16 mt-16 ml-[200px]">
+                          <img src={lastImage} class="h-full w-full" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            ;
           </div>
           <div className="mt-8 flex justify-center">
-            <Button className="" onClick={() => downloadPDF(divRef.current)}>
+            <Button className="" onPress={() => downloadPDF(divRef.current)}>
               {" "}
               Download for Free{" "}
             </Button>
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

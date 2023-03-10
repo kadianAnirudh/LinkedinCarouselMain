@@ -1,33 +1,31 @@
-import React from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
-import Logo from './logo.png'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import Logo from "./logo.png";
+import { Link } from "react-router-dom";
 const navigation = [
-//   { name: 'AI Vet', href: '#' },
+  //   { name: 'AI Vet', href: '#' },
   // { name: 'Experts', href: '#' },
   // { name: 'Something amazing 💖', href: 'https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da' },
-//   { name: 'Kadian',  },
-]
+  //   { name: 'Kadian',  },
+];
 
 const HeroPanel = () => {
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div>
-    <div className="isolate bg-white">
-      <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+      <div className="isolate bg-white">
+        <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"></div>
       </div>
-    </div>
 
       <div className="px-6 pt-6 lg:px-8">
         <nav className="flex items-center justify-between" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8" src="https://www.myollie.com/_next/static/image/src/molecules/Header/NavigationBar/ollie-logo.77a76e0aec971b04d749bbf44b646524.svg" alt="" />
+              {/* <img className="h-8" src="https://www.myollie.com/_next/static/image/src/molecules/Header/NavigationBar/ollie-logo.77a76e0aec971b04d749bbf44b646524.svg" alt="" /> */}
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -40,9 +38,13 @@ const HeroPanel = () => {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-                <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900 ">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-gray-900 "
+              >
                 {item.name}
               </a>
             ))}
@@ -51,73 +53,89 @@ const HeroPanel = () => {
             {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
               Log in <span aria-hidden="true">&rarr;</span>
             </a> */}
-          <a href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
-            className="rounded-md mr-3 bg-green-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          > Login
-                </a>
+            {/* <a
+              href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
+              className="rounded-md mr-3 bg-green-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {" "}
+              Login
+            </a>
 
-                         <a href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
-            className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          > Signup
-                </a>
+            <a
+              href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
+              className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {" "}
+              Signup
+            </a> */}
           </div>
         </nav>
-        </div>
-        
-         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                <img className="h-8" src="https://www.myollie.com/_next/static/image/src/molecules/Header/NavigationBar/ollie-logo.77a76e0aec971b04d749bbf44b646524.svg" alt="" />
-              </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="py-6">
-                  {/* <a
+      </div>
+
+      <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog.Panel
+          focus="true"
+          className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+        >
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-8"
+                src="https://www.myollie.com/_next/static/image/src/molecules/Header/NavigationBar/ollie-logo.77a76e0aec971b04d749bbf44b646524.svg"
+                alt=""
+              />
+            </a>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="py-6">
+                {/* <a
                     href="#"
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                   >
                     Log in
                   </a> */}
-                </div>
               </div>
             </div>
-          </Dialog.Panel>
-        </Dialog>
-        
-         <main>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+
+      <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <Link to='/sam'>
-              <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Try our first version with Sam Szuchan's carousel  {' '}
-                <a href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da" className="font-semibold text-indigo-600">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                   <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
+              <Link to="/sam">
+                <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  Try our first version with Sam Szuchan's carousel{" "}
+                  <a
+                    href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
+                    className="font-semibold text-indigo-600"
+                  >
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
               </Link>
             </div>
             <div className="text-center">
@@ -125,11 +143,12 @@ const HeroPanel = () => {
                 Less Confusion, Faster Execution
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-Conquer Linkedin with carousels inspired by the big guys, the engagement magnets. 
+                Conquer Linkedin with carousels inspired by the big guys, the
+                engagement magnets.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="https://hollow-farmhouse-167.notion.site/Ollie-223083b061b64eb4918820285e8e53da"
+                  href="/sam"
                   className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Get started
@@ -155,9 +174,8 @@ Conquer Linkedin with carousels inspired by the big guys, the engagement magnets
           </div>
         </div>
       </main>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default HeroPanel
-
+export default HeroPanel;
