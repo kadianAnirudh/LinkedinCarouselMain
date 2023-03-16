@@ -71,7 +71,7 @@ const HeroPanel = () => {
           </div>
         </nav>
       </div>
-
+      {/* 
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <Dialog.Panel
           focus="true"
@@ -109,17 +109,11 @@ const HeroPanel = () => {
                 ))}
               </div>
               <div className="py-6">
-                {/* <a
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
-                  >
-                    Log in
-                  </a> */}
               </div>
             </div>
           </div>
         </Dialog.Panel>
-      </Dialog>
+      </Dialog> */}
 
       <main>
         <div className="relative px-6 lg:px-8">
