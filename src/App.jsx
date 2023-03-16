@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Sam from "./Creators/Sam/Sam";
+import Sam from "./Creators/Sam/Sam.jsx";
 
 function App() {
   return (
