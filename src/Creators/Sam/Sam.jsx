@@ -60,6 +60,30 @@ const Sam = () => {
   const divRef = useRef(null);
 
   // Function for downloading PDF
+  // const downloadPDF = async (div) => {
+  //   const doc = new jsPDF({
+  //     orientation: "portrait",
+  //     unit: "px",
+  //     format: [400, 500],
+  //   });
+
+  //   const pages = div.children;
+  //   for (let i = 0; i < pages.length; i++) {
+  //     const page = pages[i];
+  //     const canvas = await html2canvas(page, {
+  //       scale: window.devicePixelRatio * 4,
+  //       useCORS: true,
+  //       allowTaint: true,
+  //     });
+  //     const imgData = canvas.toDataURL("image/png", 1.0);
+  //     doc.addImage(imgData, "PNG", 0, 0, 400, 500, null, "FAST");
+  //     if (i < pages.length - 1) {
+  //       doc.addPage();
+  //     }
+  //   }
+
+  //   doc.save("myPDF.pdf");
+  // };
   const downloadPDF = async (div) => {
     const doc = new jsPDF({
       orientation: "portrait",
@@ -75,8 +99,12 @@ const Sam = () => {
         useCORS: true,
         allowTaint: true,
       });
-      const imgData = canvas.toDataURL("image/png", 1.0);
-      doc.addImage(imgData, "PNG", 0, 0, 400, 500, null, "FAST");
+
+      // Convert canvas to JPEG data URL
+      const imgData = canvas.toDataURL("image/jpeg", 0.7);
+
+      // Add the JPEG image to the PDF
+      doc.addImage(imgData, "JPEG", 0, 0, 400, 500, null, "FAST");
       if (i < pages.length - 1) {
         doc.addPage();
       }
@@ -197,7 +225,7 @@ const Sam = () => {
 
       {/* Cover Page */}
       <div className="bg-white py-8">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
+        <div className="mx-auto max-w-7xl px-2 lg:px-8 ">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 lg:pt-4">
               <div className="lg:max-w-lg">
@@ -243,18 +271,9 @@ const Sam = () => {
               {/* The carousel page */}
               <div className="flex-col justify-center h-carouselHeight w-carouselWidth border-2 border-black overflow-hidden">
                 {/* The heading / Hook storage box  */}
-                <div className="w-[97%] h-2/4 mt-8 overflow-hidden text-center flex justify-center ml-[5px]">
+                <div className="w-full h-[300px] overflow-hidden text-center flex justify-center">
                   {/* The Hook  */}
-                  <h1
-                    // style={{
-                    //   textDecoration: "underline",
-                    //   textDecorationColor: "#FF1694",
-                    //   textDecorationThickness: "12px",
-                    //   textUnderlineOffset: "0.2em",
-                    //   //   fontFamily: "IBM Plex Sans , sans-serif",
-                    // }}
-                    className="bingo text-5xl w-full leading-relaxed"
-                  >
+                  <h1 className="bingo text-5xl w-full leading-relaxed">
                     {hook}
                   </h1>
                 </div>
@@ -329,7 +348,7 @@ const Sam = () => {
             {/* carousel page containing div */}
             <div className="flex justify-center align-center">
               {/* carousel page 1 */}
-              <div className="h-carouselHeight w-carouselWidth border-2 border-black">
+              <div className="h-carouselHeight w-carouselWidth border-2 border-black flex-col justify-center">
                 {/* section 1, with text and heading */}
                 <div className="max-w-max mt-8 mx-8 border rounded-md">
                   <h1 className="px-2 py-2 bono text-white bg-[#FF1694] font-medium border rounded-md text-lg">
@@ -344,7 +363,7 @@ const Sam = () => {
                 </div>
                 {/* section 2 with image container and image  */}
                 <div className="h-[200px] bg-[#FF1694] mt-4 ml-4 mr-4 flex justify-center items-center">
-                  <div className="h-[200px] w-[400px] border-[#FF1694] border-4">
+                  <div className="h-[180px] w-[340px]">
                     <img src={OneImage} className="h-full w-full" />
                   </div>
                 </div>
@@ -455,7 +474,7 @@ const Sam = () => {
 
       {/* Last Page */}
       <div className="overflow-hidden bg-white py-8">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
+        <div className="mx-auto max-w-7xl px-2 lg:px-8 ">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 lg:pt-4">
               <div className="lg:max-w-lg">
@@ -525,7 +544,7 @@ const Sam = () => {
                     <div class="h-40 w-[600px] bg-[#FF1694] mt-28"></div>
                     {/* image contaning div */}
                     <div class="absolute inset-0 flex justify-center items-center">
-                      <div class="h-48 w-48 mb-16 mt-16 ml-[200px]">
+                      <div class="h-48 w-48 mb-16 mt-2 ml-[200px]">
                         <img src={lastImage} class="h-full w-full" />
                       </div>
                     </div>
