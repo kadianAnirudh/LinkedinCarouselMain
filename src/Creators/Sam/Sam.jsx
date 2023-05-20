@@ -58,32 +58,6 @@ const Sam = () => {
   const [widthNumber, setwidthNumber] = useState(`600`);
   const randomNumber = 600;
   const divRef = useRef(null);
-
-  // Function for downloading PDF
-  // const downloadPDF = async (div) => {
-  //   const doc = new jsPDF({
-  //     orientation: "portrait",
-  //     unit: "px",
-  //     format: [400, 500],
-  //   });
-
-  //   const pages = div.children;
-  //   for (let i = 0; i < pages.length; i++) {
-  //     const page = pages[i];
-  //     const canvas = await html2canvas(page, {
-  //       scale: window.devicePixelRatio * 4,
-  //       useCORS: true,
-  //       allowTaint: true,
-  //     });
-  //     const imgData = canvas.toDataURL("image/png", 1.0);
-  //     doc.addImage(imgData, "PNG", 0, 0, 400, 500, null, "FAST");
-  //     if (i < pages.length - 1) {
-  //       doc.addPage();
-  //     }
-  //   }
-
-  //   doc.save("myPDF.pdf");
-  // };
   const downloadPDF = async (div) => {
     const doc = new jsPDF({
       orientation: "portrait",
@@ -212,7 +186,7 @@ const Sam = () => {
             </div>
             <div className="flex justify-center">
               <img
-                src="https://media.licdn.com/dms/image/D4D03AQEgMXXNPL-fGg/profile-displayphoto-shrink_800_800/0/1675041286704?e=1683158400&v=beta&t=Uss4SNLp9HYtcu6LfJfTnVzc6VQVpLiNP4ta3MRLy-0"
+                src={SamPicture}
                 alt="Product screenshot"
                 className="rounded-full h-64 w-64"
                 // width={2432}
