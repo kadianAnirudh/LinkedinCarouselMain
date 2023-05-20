@@ -557,8 +557,8 @@ const Sam = () => {
       </div>
 
       {/* Preview section */}
-      <div className="bg-white py-8 flex-center justify-center mt-12">
-        <div className="hidden justify-center flex-center">
+      <div className="hiddenbg-white py-8 flex-center justify-center mt-12">
+        <div className="justify-center flex-center">
           <p className="text-3xl font-bold tracking-tight text-pink-600 sm:text-4xl text-center">
             Amazing Work!
           </p>
